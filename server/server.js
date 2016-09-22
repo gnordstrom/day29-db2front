@@ -18,9 +18,11 @@ app.use(bodyParser.json());
 
 var animalCtrl = require('./controllers/animalCtrl');
 
+app.get('/api/animals', animalCtrl.getAllAnimals);
+app.post('/api/animal', animalCtrl.createAnimal);
 
 
-var port = 9001;
+var port = 9000;
 app.listen(port, function() {
   console.log('Server is now live at port ' + port);
   console.log('♫ Ground control to Major Tom ♫');
